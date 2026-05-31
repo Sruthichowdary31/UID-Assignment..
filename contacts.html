@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Scoops</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#de9048;
+      overflow-x:hidden;
+    }
+
+    /* =========================
+          NAVBAR
+    ========================== */
+
+    .navbar{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 70px;
+      background:#f3f3f3;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo img{
+      width:170px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:40px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#222;
+      font-size:17px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      border-bottom:2px solid #333;
+      padding-bottom:5px;
+    }
+
+    /* =========================
+          CONTACT SECTION
+    ========================== */
+
+    .contact-section{
+      width:100%;
+      min-height:100vh;
+      padding:60px 20px 100px;
+      background:#de9048;
+      text-align:center;
+    }
+
+    .contact-heading h1{
+      color:white;
+      font-size:60px;
+      font-family:cursive;
+      font-weight:400;
+      margin-bottom:40px;
+    }
+
+    .contact-image img{
+      width:320px;
+      height:220px;
+      object-fit:cover;
+      margin-bottom:35px;
+    }
+
+    .contact-text{
+      color:white;
+      font-size:16px;
+      line-height:1.8;
+      margin-bottom:15px;
+    }
+
+    .location-btn{
+      margin-top:25px;
+      margin-bottom:40px;
+    }
+
+    .location-btn button{
+      width:180px;
+      height:60px;
+      border:none;
+      background:#9acd32;
+      color:black;
+      font-size:17px;
+      border-radius:0 0 30px 30px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .location-btn button:hover{
+      transform:translateY(-5px);
+    }
+
+    hr{
+      width:700px;
+      margin:0 auto 40px;
+      border:1px solid white;
+    }
+
+    /* =========================
+          FORM SECTION
+    ========================== */
+
+    .form-heading h2{
+      color:white;
+      font-size:50px;
+      font-family:cursive;
+      font-weight:400;
+      margin-bottom:35px;
+    }
+
+    .contact-form{
+      width:700px;
+      margin:auto;
+      text-align:left;
+    }
+
+    .form-row{
+      display:flex;
+      gap:15px;
+    }
+
+    .form-group{
+      width:100%;
+      margin-bottom:20px;
+    }
+
+    label{
+      color:white;
+      font-size:14px;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:12px;
+      border:none;
+      outline:none;
+      font-size:15px;
+      background:#f3f3f3;
+    }
+
+    textarea{
+      height:120px;
+      resize:none;
+    }
+
+    .submit-btn{
+      text-align:center;
+      margin-top:30px;
+    }
+
+    .submit-btn button{
+      width:140px;
+      height:55px;
+      border:none;
+      background:#f3f3f3;
+      color:#de9048;
+      font-size:16px;
+      border-radius:0 0 25px 25px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .submit-btn button:hover{
+      transform:translateY(-5px);
+    }
+
+    /* =========================
+          FOOTER
+    ========================== */
+
+    .footer{
+      width:100%;
+      background:#f3f3f3;
+      padding-top:50px;
+      overflow:hidden;
+    }
+
+    .footer-logo{
+      text-align:center;
+    }
+
+    .footer-logo h1{
+      color:#de9048;
+      font-size:65px;
+      font-family:cursive;
+      font-weight:400;
+    }
+
+    .footer-menu{
+      margin-top:50px;
+      display:flex;
+      justify-content:center;
+      gap:70px;
+      flex-wrap:wrap;
+    }
+
+    .footer-menu a{
+      text-decoration:none;
+      color:#de9048;
+      font-size:18px;
+    }
+
+    .social-icons{
+      margin-top:50px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .social-icons a{
+      width:40px;
+      height:40px;
+      background:#de9048;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      font-size:22px;
+    }
+
+    .footer-wave{
+      margin-top:70px;
+      width:100%;
+      height:180px;
+      background:#de9048;
+      border-top-left-radius:50% 100px;
+      border-top-right-radius:50% 100px;
+    }
+
+    /* =========================
+          RESPONSIVE
+    ========================== */
+
+    @media(max-width:900px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .contact-form{
+        width:100%;
+      }
+
+      hr{
+        width:100%;
+      }
+
+      .form-row{
+        flex-direction:column;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .contact-heading h1{
+        font-size:40px;
+      }
+
+      .form-heading h2{
+        font-size:35px;
+      }
+
+      .footer-logo h1{
+        font-size:45px;
+      }
+
+      .footer-menu{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+      }
+
+      .contact-image img{
+        width:100%;
+        height:auto;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+        NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/5ed92f776438b015be252050/db9d87cc-a22e-4014-89ac-064233093989/Scoops+Logo+Vector+(1)+(1).png?format=1000w">
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="icecream.html">Ice Cream</a></li>
+
+      <li><a href="locations.html">Locations</a></li>
+
+      <li><a href="about.html">About Us</a></li>
+
+      <li><a href="#" class="active">Contact Us</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- =========================
+        CONTACT SECTION
+  ========================== -->
+
+  <section class="contact-section">
+
+    <div class="contact-heading">
+      <h1>Contact Corporate</h1>
+    </div>
+
+    <div class="contact-image">
+
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
+    <div class="contact-text">
+
+      <p>
+        Please send us any comments, compliments,
+        or complaints regarding our stores using the form below.
+      </p>
+
+      <p>
+        Click here to contact a specific store location.
+      </p>
+
+    </div>
+
+    <div class="location-btn">
+
+      <button onclick="window.location.href='locations.html'">
+        Locations
+      </button>
+
+    </div>
+
+    <hr>
+
+    <!-- =========================
+          FORM
+    ========================== -->
+
+    <div class="form-heading">
+      <h2>Please fill out the form below:</h2>
+    </div>
+
+    <form class="contact-form">
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text">
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email">
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="submit-btn">
+
+        <button type="submit">
+          Submit
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+  <!-- =========================
+        FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <h1>SCOOPS ICE CREAM</h1>
+    </div>
+
+    <div class="footer-menu">
+
+      <a href="index.html">Home</a>
+
+      <a href="icecream.html">Ice Cream</a>
+
+      <a href="locations.html">Locations</a>
+
+      <a href="#">Chocolates</a>
+
+      <a href="contact.html">Contact Us</a>
+
+      <a href="#">Franchise Info</a>
+
+      <a href="about.html">About Us</a>
+
+    </div>
+
+    <div class="social-icons">
+
+      <a href="#">f</a>
+
+      <a href="#">◎</a>
+
+    </div>
+
+    <div class="footer-wave"></div>
+
+  </footer>
+
+</body>
+</html>
