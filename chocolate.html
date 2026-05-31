@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolates & Candy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Princess+Sofia&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#df914c;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Main Section */
+.chocolate-section{
+    padding:80px 10%;
+    min-height:100vh;
+}
+
+.top-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    margin-bottom:80px;
+}
+
+.top-content img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.text-content{
+    max-width:550px;
+    text-align:center;
+    color:white;
+}
+
+.text-content h1{
+    font-family:'Princess Sofia',cursive;
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+.text-content p{
+    font-size:15px;
+    line-height:1.9;
+}
+
+/* Gallery */
+.gallery{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.gallery img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.08);
+}
+
+@media(max-width:900px){
+
+.top-content{
+    flex-direction:column;
+}
+
+.gallery{
+    gap:25px;
+}
+
+.top-content img{
+    width:180px;
+    height:180px;
+}
+}
+</style>
+</head>
+<body>
+
+<section class="chocolate-section">
+
+<div class="top-content">
+
+<img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=500" alt="Chocolate">
+
+<div class="text-content">
+
+<h1>Our Handmade Chocolates and Apples</h1>
+
+<p>
+Scoops offers a broad selection of handmade chocolates and hand dipped
+caramel apples and strawberries. Each chocolate is crafted with care,
+featuring rich flavors and delightful textures that melt in your mouth.
+Choose from classic milk chocolate, dark chocolate, and unique varieties
+filled with fun ingredients.
+</p>
+
+<br>
+
+<p>
+Our caramel apples are a favorite, made with juicy crisp apples and dipped
+in delicious caramel. Whether you prefer traditional toppings or nuts and
+chocolate, we have something for everyone.
+</p>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=500" alt="Candy">
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=500" alt="Chocolate Apple">
+
+<img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=500" alt="Chocolate Box">
+
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500" alt="Candy Apple">
+
+</div>
+
+</section>
+
+</body>
+</html>
