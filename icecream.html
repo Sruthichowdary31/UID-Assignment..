@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ice Cream Flavors</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#de9048;
+}
+
+.icecream-section{
+width:100%;
+padding:70px 50px;
+}
+
+.ice-heading{
+text-align:center;
+margin-bottom:50px;
+}
+
+.ice-heading h1{
+font-size:70px;
+color:white;
+font-family:cursive;
+font-weight:400;
+}
+
+.ice-heading p{
+margin-top:20px;
+color:white;
+font-size:22px;
+font-weight:bold;
+line-height:1.6;
+}
+
+.ice-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.ice-card{
+text-align:center;
+}
+
+.ice-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+background:white;
+transition:0.4s;
+}
+
+.ice-card img:hover{
+transform:scale(1.03);
+}
+
+.ice-card h3{
+margin-top:15px;
+font-size:28px;
+color:white;
+font-weight:500;
+}
+
+@media(max-width:1000px){
+
+.ice-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:700px){
+
+.ice-grid{
+grid-template-columns:1fr;
+}
+
+.ice-heading h1{
+font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="icecream-section">
+
+<div class="ice-heading">
+
+<h1>Our Signature Ice Cream Flavors</h1>
+
+<p>
+*Ice Cream flavors may vary by store.
+Check with your local store for current flavors.
+</p>
+
+</div>
+
+<div class="ice-grid">
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/4022b2f2-0d14-4305-966e-0065f4d9d87e/Vanila+.jpg?format=1000w">
+<h3>Scoops Vanilla</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/00b21e30-6f81-4727-9e9e-0d35713e7274/Chocolate+.jpg?format=1000w">
+<h3>Scoops Chocolate</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/11f88c91-2380-47c1-bf87-0b6bfa42331a/Butter+Pecan.jpg?format=1000w">
+<h3> Scoops Butter Pecan</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/659bda52-7a1c-4dda-8d3d-db56910bc918/Strawberry.jpg?format=1000w">
+<h3>Strawberry</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/515e7a4c-d42b-46f4-add8-321e49256835/OO+Oreo.jpg?format=1000w">
+<h3>Cookies N Cream</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/1456cdd5-c1b5-4aaa-802f-e85369497e15/Mint+Chip.jpg?format=1000w">
+<h3>Mint Chip</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/c92c9589-2e9e-4b6f-a8fc-a90e4fa73fbb/Birthday+Cake.jpg?format=1000w">
+<h3>Birthday Cake</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/78bf2f58-606f-4d4b-84a3-b0916213ccd7/Chocolate+Chip+Cookie+Dough.jpg?format=1000w">
+<h3>Cookie Dough</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/e3ce6d18-c6a9-48cf-9d8b-25e09b451454/Brownie.jpg?format=1000w">
+<h3>Brownie Batter</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/fcd1eced-a785-443e-85a1-f8fbc43b237c/Blueberry+Cheesecake.jpg?format=1000w">
+<h3>Blueberry Cheesecake</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/6f8ed50b-5bce-49b2-972c-f8d81a782ddd/Peanut+Butter+Brownie.jpg?format=1000w">
+<h3>Peanut Butter Brownie</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/0e524bea-2f3a-4313-b584-7985812cf27a/Cotton+Candy.jpg?format=1000w">
+<h3>Cotton Candy</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/7c50508f-6911-4641-b1d7-0244a34c7cfa/Dulce+De+Leche.jpg?format=1000w">
+<h3>Dulce De Leche</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/0ba878a5-b2d6-43c2-866b-f6dc3624f187/Yellow+Cake+Batter.jpg?format=1000w">
+<h3>Yellow cake </h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/635e6290-78bf-4130-9e16-c421ce643ba9/Supermen+.jpg?format=1000w">
+<h3>Superman</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/17202b95-6fce-4f77-882b-30b6dedb1de6/Non+Dairy+Cookies+N+Cream.jpg?format=1000w">
+<h3>Dairy Free*</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/58ae0a22-d147-4224-a919-ff9a3c084f06/Coconut.jpg?format=1000w">
+<h3>Hawalin coconut</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/b1a30338-ad78-4fde-8bce-3ccc595abf0e/Cookie+Monster.jpg?format=1000w">
+<h3>Cookie Monster</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/3a88a785-c98e-4f22-8a94-00ec4a7ff8ea/Banana+Pudding.jpg?format=1000w">
+<h3>Banana Pudding</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/7f181b4e-3ea0-44a6-b27d-687adfa1cc4b/Choc+Covered+Cherry.jpg?format=1000w">
+<h3>Chocolate Covered Cherry</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/17ee2963-9912-4040-97f8-c008adb465ce/Key+Lime+Pie.jpg?format=1000w">
+<h3>Key Lime Pie</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/ad8f1d06-95de-40ef-ad30-2917de65a62b/Pineapple+Sherbet.jpg?format=1000w">
+<h3>Pineapple</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/f4ddbcd3-acaf-4774-9e27-c2d24c1e4578/Black+Cherry.jpg?format=1000w">
+<h3>Black Cherry</h3>
+</div>
+
+<div class="ice-card">
+<img src="https://images.squarespace-cdn.com/content/v1/5a590a76f6576e1ed451aa5d/ca9aad92-28b5-494e-b285-12964a6244b1/Salted+Caramel.jpg?format=1000w">
+<h3>Salted Caramel</h3>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
