@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Scoops Ice Cream</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f3f3f3;
+      overflow-x:hidden;
+    }
+
+    /* ===================================
+          NAVBAR
+    =================================== */
+
+    .navbar{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 70px;
+      background:#f3f3f3;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo img{
+      width:170px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:45px;
+      list-style:none;
+      margin-right:120px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#222;
+      font-size:17px;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      border-bottom:2px solid #333;
+      padding-bottom:6px;
+    }
+
+    /* ===================================
+          HERO SECTION
+    =================================== */
+
+    .hero{
+      position:relative;
+      width:100%;
+      height:780px;
+      background:#f3f3f3;
+      overflow:hidden;
+    }
+
+    .hero-content{
+      text-align:center;
+      margin-top:80px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-content h1{
+      font-size:120px;
+      color:#ef82b0;
+      font-family:cursive;
+      font-weight:400;
+      letter-spacing:2px;
+    }
+
+    .hero-content p{
+      margin-top:20px;
+      font-size:18px;
+      color:#333;
+      margin-left:500px;
+    }
+
+    /* ===================================
+          WAVE SECTION
+    =================================== */
+
+    .wave{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:320px;
+      background:#de9048;
+      border-top-left-radius:50% 80px;
+      border-top-right-radius:50% 80px;
+    }
+
+    .wave::before{
+      content:"";
+      position:absolute;
+      top:-90px;
+      left:-10%;
+      width:60%;
+      height:180px;
+      background:#f3f3f3;
+      border-radius:50%;
+    }
+
+    .wave::after{
+      content:"";
+      position:absolute;
+      top:-120px;
+      right:-10%;
+      width:70%;
+      height:220px;
+      background:#f3f3f3;
+      border-radius:50%;
+    }
+
+    .wave-text{
+      position:absolute;
+      width:100%;
+      text-align:center;
+      bottom:70px;
+      color:white;
+      font-size:70px;
+      font-family:cursive;
+      letter-spacing:3px;
+      z-index:3;
+    }
+
+    /* ===================================
+          GALLERY SECTION
+    =================================== */
+
+    .gallery-section{
+      width:100%;
+      background:#de9048;
+      padding:90px 0 120px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .gallery-container{
+      width:980px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:4px;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:0.4s;
+    }
+
+    .card:hover img{
+      transform:scale(1.05);
+    }
+
+    .card-title{
+      position:absolute;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#e49a4f;
+      color:white;
+      padding:8px 18px;
+      font-size:24px;
+      font-family:cursive;
+      border-radius:5px;
+      letter-spacing:1px;
+    }
+
+    .card1,
+    .card2,
+    .card3,
+    .card4{
+      height:285px;
+    }
+
+    /* ===================================
+          BUTTONS
+    =================================== */
+
+    .buttons{
+      margin-top:35px;
+      display:flex;
+      justify-content:center;
+      gap:80px;
+    }
+
+    .buttons button{
+      width:240px;
+      height:75px;
+      border:none;
+      outline:none;
+      background:#97cf33;
+      color:white;
+      font-size:20px;
+      border-radius:20px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+      box-shadow:0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .buttons button:hover{
+      transform:translateY(-5px);
+    }
+
+    /* ===================================
+          SWEETS SECTION
+    =================================== */
+
+    .sweet-section{
+      width:100%;
+      background:#f3f3f3;
+      padding:90px 80px 120px;
+    }
+
+    .sweet-heading{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .sweet-heading h2{
+      font-size:60px;
+      color:#de9048;
+      font-weight:700;
+    }
+
+    .sweet-items{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:55px;
+      flex-wrap:wrap;
+    }
+
+    .sweet-card{
+      text-align:center;
+    }
+
+    .sweet-card img{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      transition:0.4s;
+      cursor:pointer;
+    }
+
+    .sweet-card img:hover{
+      transform:scale(1.08);
+    }
+
+    .sweet-card h3{
+      margin-top:18px;
+      font-size:24px;
+      color:#333;
+      font-weight:500;
+      width:200px;
+      line-height:1.4;
+    }
+
+    .sweet-content{
+      max-width:950px;
+      margin:90px auto 0;
+    }
+
+    .sweet-content p{
+      color:#ef75a5;
+      font-size:22px;
+      line-height:1.7;
+      margin-bottom:40px;
+      font-weight:500;
+    }
+
+    /* ===================================
+          FOOTER
+    =================================== */
+
+    .footer{
+      position:relative;
+      width:100%;
+      background:#f3f3f3;
+      padding:70px 40px 0;
+      overflow:hidden;
+    }
+
+    .footer-logo{
+      text-align:center;
+    }
+
+    .footer-logo h1{
+      color:#de9048;
+      font-size:85px;
+      font-family:cursive;
+      font-weight:400;
+      letter-spacing:3px;
+    }
+
+    .footer-menu{
+      margin-top:60px;
+      display:flex;
+      justify-content:center;
+      gap:90px;
+      flex-wrap:wrap;
+    }
+
+    .footer-menu a{
+      text-decoration:none;
+      color:#de9048;
+      font-size:22px;
+      transition:0.3s;
+    }
+
+    .footer-menu a:hover{
+      opacity:0.7;
+    }
+
+    /* ===================================
+          SOCIAL ICONS
+    =================================== */
+
+    .social-icons{
+      margin-top:60px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      position:relative;
+      z-index:5;
+    }
+
+    .social-icons a{
+      width:44px;
+      height:44px;
+      background:#de9048;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-decoration:none;
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    /* ===================================
+          FOOTER WAVE
+    =================================== */
+
+    .footer-wave{
+      margin-top:80px;
+      width:100%;
+      height:180px;
+      background:#de9048;
+      border-top-left-radius:50% 100px;
+      border-top-right-radius:50% 100px;
+    }
+
+    /* ===================================
+          RESPONSIVE
+    =================================== */
+
+    @media(max-width:1200px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-right:0;
+      }
+
+      .hero-content h1{
+        font-size:70px;
+      }
+
+      .hero-content p{
+        margin-left:0;
+      }
+
+      .wave-text{
+        font-size:45px;
+      }
+
+      .gallery-container{
+        width:95%;
+      }
+
+      .buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:30px;
+      }
+
+      .sweet-items{
+        gap:40px;
+      }
+
+      .sweet-heading h2{
+        font-size:48px;
+      }
+
+      .footer-menu{
+        gap:40px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:50px;
+      }
+
+      .wave-text{
+        font-size:32px;
+      }
+
+      .nav-links{
+        gap:20px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .sweet-section{
+        padding:70px 25px;
+      }
+
+      .sweet-heading h2{
+        font-size:36px;
+      }
+
+      .sweet-card img{
+        width:130px;
+        height:130px;
+      }
+
+      .sweet-card h3{
+        font-size:18px;
+        width:150px;
+      }
+
+      .sweet-content p{
+        font-size:18px;
+      }
+
+      .footer-logo h1{
+        font-size:50px;
+      }
+
+      .footer-menu{
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================================
+        NAVBAR
+  =================================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/5ed92f776438b015be252050/db9d87cc-a22e-4014-89ac-064233093989/Scoops+Logo+Vector+(1)+(1).png?format=1000w">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="icecream.html">Ice Cream</a></li>
+      <li><a href="chocolate.html">Chocolates and Candy</a></li>
+      <li><a href="Location.html">Our Locations</a></li>
+      <li><a href="About us.html">About Us</a></li>
+      <li><a href="Franchise.html">Franchise Info</a></li>
+      <li><a href="contacts.html">Contact Us</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- ===================================
+        HERO SECTION
+  =================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Welcome to Scoops!</h1>
+      <p>Established in 2003 in Madison, GA</p>
+    </div>
+
+    <div class="wave"></div>
+
+    <div class="wave-text">
+      SWEET DREAMS ARE MADE OF THESE
+    </div>
+
+  </section>
+
+  <!-- ===================================
+        GALLERY SECTION
+  =================================== -->
+
+  <section class="gallery-section">
+
+    <div class="gallery-container">
+
+      <div class="gallery-grid">
+
+        <div class="card card1">
+          <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-title">
+            ICE CREAM
+          </div>
+        </div>
+
+        <div class="card card2">
+          <img src="https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-title">
+            CHOCOLATE
+          </div>
+        </div>
+
+        <div class="card card3">
+          <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-title">
+            CANDY
+          </div>
+        </div>
+
+        <div class="card card4">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="card-title">
+            GIFTS
+          </div>
+        </div>
+
+      </div>
+
+      <div class="buttons">
+
+        <button>
+          Find A Scoops Near You
+        </button>
+
+        <button>
+          Own A Scoops Franchise
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================
+        SWEETS SECTION
+  =================================== -->
+
+  <section class="sweet-section">
+
+    <div class="sweet-heading">
+      <h2>Your One Stop Shop for Sweets</h2>
+    </div>
+
+    <div class="sweet-items">
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>32 Flavors of Ice Cream</h3>
+      </div>
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>Hand Crafted Chocolates</h3>
+      </div>
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>Hand Dipped Caramel Apples</h3>
+      </div>
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>Novelty Candies</h3>
+      </div>
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>Toys</h3>
+      </div>
+
+      <div class="sweet-card">
+        <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>Gifts</h3>
+      </div>
+
+    </div>
+
+    <div class="sweet-content">
+
+      <p>
+        Scoops offers a delightful array of 32 flavors of ice cream that are
+        sure to satisfy any sweet tooth. From classic vanilla to adventurous
+        combinations, each scoop is made with love and the finest ingredients.
+        We also offer in-house made chocolates and caramel apples that are sure
+        to add a rich and decadent touch to your visit.
+      </p>
+
+      <p>
+        But that’s not all! Dive into our wide selection of novelty and nostalgic
+        candies, where you can relive your childhood favorites or try something
+        new from our candy wall, filled with a variety of treats sold by the pound.
+        Whether you're looking for a unique gift or a sweet indulgence for yourself,
+        Scoops has something for everyone to enjoy!
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ===================================
+        FOOTER
+  =================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <h1>SCOOPS ICE CREAM</h1>
+    </div>
+
+    <div class="footer-menu">
+
+      <a href="#">Home</a>
+      <a href="#">Ice Cream</a>
+      <a href="#">Chocolates</a>
+      <a href="#">Employment Application</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Franchise Info</a>
+      <a href="#">About Us</a>
+
+    </div>
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="social-icons">
+
+      <a href="#">f</a>
+      <a href="#">◎</a>
+
+    </div>
+
+    <!-- FOOTER WAVE -->
+
+    <div class="footer-wave"></div>
+
+  </footer>
+
+</body>
+</html>
