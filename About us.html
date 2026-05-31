@@ -1,0 +1,392 @@
+<!-- ===================================
+      ABOUT US PAGE
+      SAVE THIS FILE AS:
+      about.html
+=================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Scoops</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#de9048;
+      overflow-x:hidden;
+    }
+
+    /* =========================
+          NAVBAR
+    ========================== */
+
+    .navbar{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 70px;
+      background:#f3f3f3;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo img{
+      width:170px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:40px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#222;
+      font-size:17px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      border-bottom:2px solid #333;
+      padding-bottom:5px;
+    }
+
+    /* =========================
+          ABOUT SECTION
+    ========================== */
+
+    .about-section{
+      width:100%;
+      min-height:100vh;
+      padding:60px 80px 120px;
+      background:#de9048;
+    }
+
+    .about-heading{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .about-heading h1{
+      font-size:70px;
+      color:white;
+      font-family:cursive;
+      font-weight:400;
+    }
+
+    .about-container{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .about-image img{
+      width:520px;
+      height:420px;
+      object-fit:cover;
+    }
+
+    .about-content{
+      width:550px;
+      color:white;
+    }
+
+    .about-content p{
+      font-size:17px;
+      line-height:1.9;
+      margin-bottom:22px;
+    }
+
+    .about-btn{
+      margin-top:30px;
+    }
+
+    .about-btn button{
+      width:220px;
+      height:70px;
+      border:none;
+      background:#9acd32;
+      color:black;
+      font-size:18px;
+      border-radius:0 0 35px 35px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .about-btn button:hover{
+      transform:translateY(-5px);
+    }
+
+    /* =========================
+          FOOTER
+    ========================== */
+
+    .footer{
+      width:100%;
+      background:#f3f3f3;
+      padding-top:50px;
+      overflow:hidden;
+    }
+
+    .footer-logo{
+      text-align:center;
+    }
+
+    .footer-logo h1{
+      color:#de9048;
+      font-size:70px;
+      font-family:cursive;
+      font-weight:400;
+    }
+
+    .footer-menu{
+      margin-top:50px;
+      display:flex;
+      justify-content:center;
+      gap:70px;
+      flex-wrap:wrap;
+    }
+
+    .footer-menu a{
+      text-decoration:none;
+      color:#de9048;
+      font-size:18px;
+    }
+
+    .social-icons{
+      margin-top:50px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .social-icons a{
+      width:40px;
+      height:40px;
+      background:#de9048;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      font-size:22px;
+    }
+
+    .footer-wave{
+      margin-top:70px;
+      width:100%;
+      height:180px;
+      background:#de9048;
+      border-top-left-radius:50% 100px;
+      border-top-right-radius:50% 100px;
+    }
+
+    /* =========================
+          RESPONSIVE
+    ========================== */
+
+    @media(max-width:1200px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .about-container{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .about-image img{
+        width:100%;
+        max-width:520px;
+      }
+
+      .about-content{
+        width:100%;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .about-section{
+        padding:40px 20px 80px;
+      }
+
+      .about-heading h1{
+        font-size:45px;
+      }
+
+      .about-image img{
+        height:auto;
+      }
+
+      .footer-logo h1{
+        font-size:45px;
+      }
+
+      .footer-menu{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+        NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <img src="https://images.squarespace-cdn.com/content/v1/5ed92f776438b015be252050/db9d87cc-a22e-4014-89ac-064233093989/Scoops+Logo+Vector+(1)+(1).png?format=1000w">
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li><a href="icecream.html">Ice Cream</a></li>
+
+      <li><a href="locations.html">Locations</a></li>
+
+      <li><a href="#" class="active">About Us</a></li>
+
+      <li><a href="#">Contact Us</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- =========================
+        ABOUT SECTION
+  ========================== -->
+
+  <section class="about-section">
+
+    <div class="about-heading">
+      <h1>About Scoops</h1>
+    </div>
+
+    <div class="about-container">
+
+      <!-- IMAGE -->
+
+      <div class="about-image">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop">
+
+      </div>
+
+      <!-- CONTENT -->
+
+      <div class="about-content">
+
+        <p>
+          “Someday,” that was the day that Susan Kirk thought she would get the opportunity
+          to open an ice cream shop of her own. That day came when the perfect location
+          for the first Scoops became available in downtown Madison, GA.
+        </p>
+
+        <p>
+          Madison is a picture-perfect rural community once named America’s best small town.
+          Along the tree-lined streets, Madison had its share of history, culture, and recreation
+          but no ice cream shop. Hence, “Someday,” Ms. Susan’s vision of an ice cream shop
+          was one like none other.
+        </p>
+
+        <p>
+          From homemade fudge and chocolates to hand-crafted ice cream flavors,
+          Scoops became a favorite destination for families and sweet lovers.
+          Today Scoops continues to grow with multiple locations and franchise opportunities.
+        </p>
+
+        <!-- BUTTON -->
+
+        <div class="about-btn">
+
+          <button>
+            Franchise A Scoops
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+        FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <h1>SCOOPS ICE CREAM</h1>
+    </div>
+
+    <div class="footer-menu">
+
+      <a href="index.html">Home</a>
+
+      <a href="icecream.html">Ice Cream</a>
+
+      <a href="locations.html">Locations</a>
+
+      <a href="#">Chocolates</a>
+
+      <a href="#">Contact Us</a>
+
+      <a href="#">Franchise Info</a>
+
+      <a href="about.html">About Us</a>
+
+    </div>
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="social-icons">
+
+      <a href="#">f</a>
+
+      <a href="#">◎</a>
+
+    </div>
+
+    <!-- FOOTER WAVE -->
+
+    <div class="footer-wave"></div>
+
+  </footer>
+
+</body>
+</html>
